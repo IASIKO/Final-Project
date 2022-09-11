@@ -47,7 +47,7 @@ body {
   width: 200px;
 }
 
-.header .nav-ul {
+.nav-ul {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -55,6 +55,10 @@ body {
   display: flex;
   justify-content: space-around;
   width: 550px;
+}
+
+.nav-ul li a {
+  transition: 0.7s ease;
 }
 
 .header ul li a {
@@ -69,7 +73,7 @@ body {
 }
 
 .registration-search ul {
-  width: 200px;
+  width: 145px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -115,7 +119,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  /* display: none; */
+  display: none;
 }
 
 .burger-menu:hover .burger {
@@ -127,6 +131,8 @@ body {
   width: 30px;
   height: 3px;
   background-color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* SLIDER  */
@@ -188,6 +194,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  color: white;
 }
 
 .content-div p {
@@ -371,11 +378,7 @@ body {
 /* TEAM MEMBERS SECTION  */
 
 .team-container {
-  /* margin: 50px auto; */
-  /* border-radius: 20px; */
   background-color: white;
-  /* background-color: rgb(255, 255, 255, 0.5); */
-  /* width: 800px; */
 }
 
 .team-inner-box {
@@ -388,7 +391,7 @@ body {
   font-size: 25px;
 }
 
-.left {
+.team-left {
   position: absolute;
   left: -20px;
   top: 60%;
@@ -396,7 +399,7 @@ body {
   cursor: pointer;
 }
 
-.right {
+.team-right {
   position: absolute;
   right: -20px;
   top: 60%;
@@ -449,7 +452,7 @@ body {
 
 .services {
   background-color: rgb(98, 118, 163);
-  height: 400px;
+  padding: 30px 0 100px 0;
 }
 
 .services-heading {
@@ -502,7 +505,7 @@ body {
 
 .service-div {
   width: 800px;
-  height: 200px;
+  /* height: 200px; */
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -526,61 +529,68 @@ body {
   .header ul li a {
     font-size: 18px;
   }
-  .header .nav ul {
+  .nav-ul {
     width: 400px;
   }
-  .team-container {
+  .team-inner-box {
     width: 600px;
+  }
+  .service-div {
+    width: 350px;
+    height: 300px;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .content-div {
+    top: 130px;
+    left: 30px;
+    max-width: 300px;
+    max-height: 130px;
+    padding: 10px 20px;
+    gap: 5px;
   }
 }
 
 @media (max-width: 768px) {
   .burger-menu {
     display: block;
-    border-left: 1px solid white;
-    padding-left: 23px;
-    width: 50px;
-    height: 20px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
   }
-  .nav {
-    display: none;
+
+  .burger-menu.active .burger:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-menu.active .burger:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burger-menu.active .burger:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-ul {
+    position: fixed;
+    right: -100%;
+    top: 100px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255, 0.3);
+    width: 235px;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-ul.active {
+    right: 0;
+  }
+
+  .nav-ul li {
+    margin: 8px 0;
   }
 
   .registration-search ul {
     width: 180px;
-  }
-
-  .nav-burger {
-    width: 210px;
-    height: 150px;
-    position: absolute;
-    right: 100px;
-    top: 100px;
-    background-color: rgb(255, 255, 255, 0.3);
-    display: block;
-  }
-
-  .ul-burger {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .a-burger {
-    color: black;
-    font-size: 30px;
   }
 }

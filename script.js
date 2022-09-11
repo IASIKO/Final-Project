@@ -16,15 +16,19 @@ joinBtn.addEventListener("click", function (event) {
 // BURGER MENU
 
 const burgerMenu = document.getElementById("burgerMenu");
-const navigation = document.getElementById("navigation");
 const navUl = document.getElementById("navUl");
-const navA = document.getElementsByClassName("nav-a");
 
 burgerMenu.addEventListener("click", function () {
-  navigation.classList.toggle("nav-burger");
-  navUl.classList.toggle("ul-burger");
-  navA.style.color = "black";
+  burgerMenu.classList.toggle("active");
+  navUl.classList.toggle("active");
 });
+
+document.querySelectorAll(".nav-a").forEach((n) =>
+  n.addEventListener("click", function () {
+    burgerMenu.classList.remove("active");
+    navUl.classList.remove("active");
+  })
+);
 
 // SLIDER
 
@@ -288,22 +292,26 @@ showHideI1.addEventListener("click", function () {
 
 // email validation
 
-// const emailVal = document.getElementById("email");
+const email = document.getElementById("email");
 
-// emailVal.addEventListener("keydown", function (params) {
-//   // params.preventDefault();
-//   const emailTxt = document.querySelector(".valid-mail");
-//   const emailRegex =
-//     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+email.addEventListener("keydown", function () {
+  // params.preventDefault();
+  const emailVal = email.value;
+  const emailTxt = document.getElementById("text");
+  const emailRegex =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-//   if (emailVal.input.match(emailRegex)) {
-//     errorTexts.email = "Your mail is valide!";
-//     emailTxt.classList.add("valid-mail");
-//   } else {
-//     errorTexts.email = "Your mail is valide!";
-//     // emailTxt.classList.add("valid-mail");
-//   }
-// });
+  if (emailVal.match(emailRegex)) {
+    emailTxt.textContent = "Your mail is valide!";
+    emailTxt.style.color = "Green";
+  } else if (emailVal == "") {
+    emailTxt.textContent = "Email field is required!";
+    emailTxt.style.color = "Red";
+  } else {
+    emailTxt.textContent = "Your mail is invalide!";
+    emailTxt.style.color = "Red";
+  }
+});
 
 closeFormBtn.addEventListener("click", function () {
   formSection.classList.remove("active-form");
