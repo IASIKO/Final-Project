@@ -268,78 +268,7 @@ body {
 .pass-input span i {
   cursor: pointer;
 }
-/* TEAM MEMBERS SECTION  */
 
-.team-container {
-    background-color: white;
-  }
-  
-  .team-inner-box {
-    margin: auto;
-    width: 800px;
-    position: relative;
-  }
-  
-  .team-container span i {
-    font-size: 25px;
-  }
-  
-  .team-left {
-    position: absolute;
-    left: -20px;
-    top: 60%;
-    /* transform: translateY(-50%); */
-    cursor: pointer;
-  }
-  
-  .team-right {
-    position: absolute;
-    right: -20px;
-    top: 60%;
-    cursor: pointer;
-  }
-  
-  .arrow-transition {
-    transition: 0.3s;
-  }
-  
-  .inner-container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 30px;
-  }
-  
-  .member-box {
-    width: 180px;
-    border-radius: 15px;
-    padding: 5px;
-    /* background-color: rgb(98, 118, 163, 0.5); */
-  }
-  
-  .inner-box {
-    text-align: center;
-  }
-  
-  .member-box img {
-    /* border: 5px black solid; */
-    border-radius: 50%;
-    /* margin-left: 50%;
-    transform: translateX(-50%); */
-  }
-  
-  .section-heading {
-    text-align: center;
-    padding-top: 20px;
-    font-size: 30pt;
-    font-weight: 300;
-    padding: 60px 0 20px 0;
-  }
 
 /* ABOUT  */
 
