@@ -21,7 +21,7 @@ body {
 }
 
 .header {
-  background-color: rgb(98, 118, 163);
+  background-color: rgba(38, 44, 58, 255);
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
